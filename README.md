@@ -126,15 +126,11 @@ ollama run llama3.1
 
 ### 4. Set up environment variables
 
-Create a `.env` file in the root directory:
-
-```
-touch .env
-```
+Create a `.env` file in the root directory.
 
 Inside `.env`, add:
 
-```
+```env
 MODEL_NAME=llama3.1
 GOOGLE_API_KEY=your_google_api_key
 SEARCH_ENGINE_ID=your_custom_search_engine_id
