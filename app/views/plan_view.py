@@ -6,9 +6,10 @@ def render_plan():
     if st.session_state.assessment_result and not st.session_state.plan_result:
         curriculum_agent = CurriculumAgent(os.getenv('MODEL_NAME'))
         with st.spinner("Generating your personalized 4-week learning plan..."):
+            # generate_learning_plan expects (learning_goal, assessment)
             st.session_state.plan_result = curriculum_agent.generate_learning_plan(
-                st.session_state.assessment_result,
-                st.session_state.learning_goal
+                st.session_state.learning_goal,
+                st.session_state.assessment_result
             )
 
     # --- Step 6: View Plan (Text) ---
